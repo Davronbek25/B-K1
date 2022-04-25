@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day.
+- You can ask for tutor's help.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided.
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to achieve a great display.
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life, 
+the worst album you ever listen to and everything related to the music you love.
+NOTE:
+Most of the times, even the most expert of designers needs inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+         */
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- EXERCISE 2 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must be linked to every section in your page
+        -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- EXERCISE 3
+            Create a responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller window)
+            - 2 albums per row when you are on a small screen
+        -->
+        <!-- <div class="container p-3 my-4">
+            <div class="row">
+                <div class="col-lg-3 bg-light text-dark p-0">
+                    <img src="/assets/aurora.png" class="img-fluid">
+                    <div class="mt-2 p-3">
+                        <h5>Title</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <h3 class="text-center mt-5">My Favourite Albums <img src="/assets/767-7675966_ghost-logo-png.png" width="22x" class="pb-2" onclick="hideBtn1()"></h3>
+        <div class="row p-3 m-2 d-flex justify-content-center" id="favouriteAlbums">
+            <div class="card col-lg-3 col-md-4 col-sm-2 m-3 p-0" style="width: 18rem;">
+                <img src="/assets/71aVBBSgbUL._SS500_.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-4 col-sm-2 m-3 p-0" style="width: 18rem;">
+                <img src="/assets/blackpink___the_album__fanmade_album_cover__by_conquxror_deck3jm-fullview.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-4 col-sm-2 m-3 p-0" style="width: 18rem;">
+                <img src="/assets/billieeilish_whenweallfallasleepw_bs3v.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-4 col-sm-2 m-3 p-0" style="width: 18rem;">
+                <img src="/assets/ab67616d0000b2737cbd52d55d79391b9ea54f88.jfif" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 4
+            Create a section for the album review.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Lenght
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+        <h3 class="text-center mb-4">My Favourite Album</h3>
+        <div class="row d-flex justify-content-center m-3">
+            <div class="card mb-3 p-0" style="max-width: 80%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/assets/b3690337728d55efda855c0a04c160c9.jpg" class="img-fluid rounded-start"
+                            alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Title: Lovesick Girls</h5>
+                            <h6 class="card-title">Band: BLACKPINK</h6>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 5
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+        <h3 class="text-center mb-4">Hall of Shame</h3>
+        <div class="row d-flex justify-content-center m-3">
+            <div class="card mb-3 p-0 bg-danger text-white" style="max-width: 80%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/assets/81nFF-rXdRL._AC_SX466_.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Title: Lovesick Girls</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+        <h3 class="text-center mb-4 text-dark">My Favourite Singer</h3>        
+        <div class="row d-flex justify-content-center m-3 text-white">
+            <div class="row w-75" style="background-color: black;">
+                <div class="col-8">
+                    <img src="/assets/aurora.png" class="img-fluid">
+                </div>
+                <div class="col-4">
+                    <div class="card-body">
+                        <h4>Aurora</h4>
+                        <p class="font-italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Error voluptates aut magni incidunt nulla sunt eos vero fugiat, modi quam?
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.
+                            Optio itaque quisquam consequatur tenetur veniam fugit dolore, ex ipsam minima obcaecati
+                            incidunt dolores voluptatem, atque ratione porro. Fuga, excepturi!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+        <h2 class="text-center mb-3">Favourite Album Pictures</h2>
+        <div class="d-flex flex-column align-items-center my-3">
+            <div class="row container mb-3">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/R-14815584-1582142083-5603.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/81nFF-rXdRL._AC_SX466_.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/ab67616d0000b2737cbd52d55d79391b9ea54f88.jfif" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/artworks-mUSuL6s04aJ2-0-t500x500.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/AURORA-ALBUM-ARTWORK-1024x1024.png" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/Aurora_-_All_My_Demons_Greeting_Me_as_a_Friend.png" class="img-thumbnail p-0">
+                </div>
+            </div>
+            <div class="row container">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/b3690337728d55efda855c0a04c160c9.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/billieeilish_whenweallfallasleepw_bs3v.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/blackpink___the_album__fanmade_album_cover__by_conquxror_deck3jm-fullview.jpg"
+                        class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/R-14815584-1582142083-560.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/ERFx2g7UcAEKy3C.jpg" class="img-thumbnail p-0">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <img src="/assets/cf2695bd55c5a14e6afa89cf975aee2c--the-clouds-queen-of.jpg"
+                        class="img-thumbnail p-0">
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCISE 8
+            Implement a footer with some information / social links
+        -->
+        <footer class="container-fluid bg-light mt-4 pt-4">
+            <div class="row">
+                <form action="">
+                    <div class="row d-flex justify-content-center mb-3">
+                        <div class="col-auto pt-2">
+                            <h5>Subscribe to newsletter</h5>
+                        </div>
+                        <div class="col-lg-5 col-10">
+                            <div class="form d-flex flex-column align-items-center">
+                                <input type="email" class="form-control" id="email">
+                                <label for="email" class="form-label mt-1">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-success">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="d-flex justify-content-center">
+                    <p class="text-center">
+                        <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum repellat
+                            quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam eum harum corrupti
+                            dicta, aliquam sequi voluptate quas.
+                        </strong>
+                    </p>
+                </div>
+                <div class="text-muted text-center mb-3" id="numberOfAlbums"></div>
+
+                <div class="row text-center">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <h5 class=""><strong>LINKS</strong></h5>
+
+                        <ul class="p-0" style="list-style: none;">
+                            <li>Link1</li>
+                            <li>Link2</li>
+                            <li>Link3</li>
+                            <li>Link4</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <h5 class=""><strong>LINKS</strong></h5>
+
+                        <ul class="p-0" style="list-style: none;">
+                            <li>Link1</li>
+                            <li>Link2</li>
+                            <li>Link3</li>
+                            <li>Link4</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <h5 class=""><strong>LINKS</strong></h5>
+
+                        <ul class="p-0" style="list-style: none;">
+                            <li>Link1</li>
+                            <li>Link2</li>
+                            <li>Link3</li>
+                            <li>Link4</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <h5 class=""><strong>LINKS</strong></h5>
+
+                        <ul class="p-0" style="list-style: none;">
+                            <li>Link1</li>
+                            <li>Link2</li>
+                            <li>Link3</li>
+                            <li>Link4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-3" style="background-color: #F0F0F0;">
+                © 2020 Copyright: <a href="https://mdbootstrap.com/" class="text-dark" style="text-decoration: none;">MDBootstrap.com</a>
+            </div>
+        </footer>
+
+        <!-- EXTRA:
+         EXERCISE 9
+            Create album details that are going to be toggled on and off by clicking on the album image
+        -->
+
+        <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible)
+        -->
+
+        <!--
+            EXERCISE 11
+            Add in the footer a field that counts, on page load, how many ALBUMS are on the page 
+        -->
+        <script>
+            const hideBtn1 = function () {
+                document.getElementById('favouriteAlbums').classList.toggle('d-none')
+            }
+
+            window.onload = function() {
+                const parent = document.getElementById('numberOfAlbums')
+                const child = `Number of Albums: ${document.getElementsByTagName('img').length - 1}`
+                parent.innerText = child
+            }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
